@@ -1,0 +1,14 @@
+name: Run Only on Specific Tag
+
+on:
+  push:
+    tags:
+      - "v1.0.0"   # This workflow runs ONLY when this tag is pushed
+
+jobs:
+  specific-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Print message
+        run: echo "Tag v1.0.0 was pushed! Running workflow..."
